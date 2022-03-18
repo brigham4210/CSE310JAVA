@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Multiplication extends Operation {
+    
+
+    private String operate () {
+        this.question = this.firstNumber + " x " + this.secondNumber + " = ";
+        return this.question ;
+    };
+
+    public void ask (list list) {
+        Scanner input = new Scanner(System.in);
+
+        this.produceNumbers();
+        
+        System.out.println(operate());
+        int answer = input.nextInt();
+        String text = question+answer;
+        
+        if (answer != this.product){
+            System.out.println(this.incorrect_sentence);
+            list.addIncorrectQuestions(text);
+        } else{
+            System.out.println(this.correct_sentence);
+            this.score +=5;
+            list.addCorrectQuestions(text);
+        }
+
+    }
+}

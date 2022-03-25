@@ -1,7 +1,7 @@
 import java.util.Random;
 
 
-public class Operation{
+public abstract class Operation{
     
     Random rand = new Random();
     int firstNumber = 0;
